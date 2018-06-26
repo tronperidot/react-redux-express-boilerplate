@@ -17,6 +17,7 @@ Created by [Zachary Taylor](http://twitter.com/ztaylor) and :coffee:
 * [Styled Components](https://www.styled-components.com): Use the best bits of ES6 and CSS to style your apps
 * [prop-types](https://github.com/facebook/prop-types): Runtime type checking for React props and similar objects
 * [ESLint](http://eslint.org): The pluggable linting utility for JavaScript and JSX
+* [sqlite3](https://www.sqlite.org/index.html)
 
 ---
 

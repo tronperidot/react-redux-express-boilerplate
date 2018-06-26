@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
+const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
 app.use(morgan('combined'));
@@ -10,6 +11,16 @@ app.get('/api/test', (req, res) => {
   res.json({
     message: 'hello world',
   });
+});
+
+app.get('/api/db', (req, res) => {
+  const db = new sqlite3.Database('sample.sqlite3');
+  db.serialize(function() {
+    db.all('SELECT id,name FROM users', function(err, rows) {
+      res.json(rows);
+    });
+  });
+  db.close();
 });
 
 // The "catch all" handler: for any request that doesn't
